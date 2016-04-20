@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+.sass-cache
+.idea/
+.elasticbeanstalk/
+npm-debug*.log
+newrelic_agent.log
+*.map
+app-debug.log
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

@@ -1,0 +1,245 @@
+// 
+// Colors
+// 
+
+@mixin generate-colors($label, $color)
+  .text-#{$label}
+    color: $color !important
+  .bg-#{$label}
+    background: $color !important
+  .border-#{$label}
+    border-color: $color !important
+
+@include generate-colors('red', $red)
+@include generate-colors('orange', $orange)
+@include generate-colors('green', $green)
+@include generate-colors('teal', $teal)
+@include generate-colors('blue', $blue)
+@include generate-colors('navy', $navy)
+@include generate-colors('pink', $pink)
+@include generate-colors('purple', $purple)
+@include generate-colors('dark', $dark)
+@include generate-colors('gray', $gray)
+@include generate-colors('gray-light', $gray-light)
+@include generate-colors('gray-blue', $gray-blue)
+
+// 
+// Text
+// 
+
+@mixin antialias
+  -webkit-font-smoothing: antialiased !important
+  -moz-osx-font-smoothing: grayscale !important
+
+.antialias
+  +antialias
+  
+// 
+// Font Size
+// 
+
+@mixin generate-fontsizes($size)
+  .fs#{$size}
+    font-size: #{$size}px !important
+
+@include generate-fontsizes(10)
+@include generate-fontsizes(12)
+@include generate-fontsizes(14)
+@include generate-fontsizes(16)
+@include generate-fontsizes(18)
+@include generate-fontsizes(20)
+@include generate-fontsizes(22)
+@include generate-fontsizes(24)
+@include generate-fontsizes(26)
+
+
+// 
+// Font Families
+// 
+.source
+  font-family: $source
+
+
+// 
+// Margin & Padding
+// 
+
+@mixin generate-spacing($size)
+  .p-#{$size}
+    padding: #{$size}px !important
+  .p-v-#{$size}
+    padding-top: #{$size}px !important
+    padding-bottom: #{$size}px !important
+  .p-h-#{$size}
+    padding-left: #{$size}px !important
+    padding-right: #{$size}px !important
+  .p-t-#{$size}
+    padding-top: #{$size}px !important
+  .p-r-#{$size}
+    padding-right: #{$size}px !important
+  .p-b-#{$size}
+    padding-bottom: #{$size}px !important
+  .p-l-#{$size}
+    padding-left: #{$size}px !important
+  .m-#{$size}
+    margin: #{$size}px !important
+  .m-v-#{$size}
+    margin-top: #{$size}px !important
+    margin-bottom: #{$size}px !important
+  .m-h-#{$size}
+    margin-left: #{$size}px !important
+    margin-right: #{$size}px !important
+  .m-t-#{$size}
+    margin-top: #{$size}px !important
+  .m-r-#{$size}
+    margin-right: #{$size}px !important
+  .m-b-#{$size}
+    margin-bottom: #{$size}px !important
+  .m-l-#{$size}
+    margin-left: #{$size}px !important
+  
+
+@include generate-spacing(0)
+@include generate-spacing(5)
+@include generate-spacing(10)
+@include generate-spacing(15)
+@include generate-spacing(20)
+@include generate-spacing(25)
+@include generate-spacing(30)
+@include generate-spacing(40)
+@include generate-spacing(50)
+@include generate-spacing(70)
+
+// Auto Margins
+
+.m-l-a
+  margin-left: auto !important
+.m-r-a
+  margin-right: auto !important
+
+
+// 
+// Border
+// 
+
+.borderless
+  border: none !important
+  box-shadow: none !important
+
+// Display
+
+.inline-block
+  display: inline-block !important
+.block 
+  display: block !important
+
+// Position
+
+.centered
+  margin: 0 auto !important
+  display: block !important
+
+
+// Align
+.text-center
+  text-align: center !important
+.text-left
+  text-align: left !important
+.text-right
+  text-align: right !important
+
+.va-t
+  vertical-align: top !important
+.va-b
+  vertical-align: bottom !important
+
+.float-right
+  float: right !important
+.float-left
+  float: left !important
+
+// Width
+
+.full-width
+  width: 100% !important
+
+//
+// Max widths
+// 
+
+.mw425
+  max-width: 425px !important
+.mw650
+  max-width: 650px !important
+.mw750
+  max-width: 750px !important
+.mw850
+  max-width: 850px !important
+
+.flex
+  display: -webkit-flex !important
+  display: -ms-flexbox !important
+  display: flex !important
+
+// 
+// 
+// 
+
+ul.flatten-list
+  list-style: none
+  padding-left: 0
+
+// 
+// Dividing
+// 
+
+// .top.dividing.header
+//   border-bottom: none !important
+//   border-top: 1px solid rgba($dark, 0.3)
+//   padding: 15px 0 0
+
+// 
+// Gradients
+// 
+
+$gradient: '#FD3044 0%, #FD3044 12.25%, #FFB630 12.25%, #FFB630 25%, #13C4A3 25%, #13C4A3 37.5%, #36F1CD 37.5%, #36F1CD 50%, #39A0ED 50%, #39A0ED 62.5%, #4C6085 62.5%, #4C6085 75%, #F42EAA 75%, #F42EAA 87.5%, #A438EE 87.5%, #A438EE 100%'
+
+.gamut
+  background: $slate
+  background: -moz-linear-gradient(left, #{$gradient})
+  background: -webkit-linear-gradient(left, #{$gradient})
+  background: linear-gradient(to right, #{$gradient})
+
+
+$gradient-start: $blue
+$gradient-end: lighten($blue, 10%)
+
+.gradient-tl-br
+  background: $gradient-start !important
+  background: -moz-linear-gradient(-45deg,  $gradient-start 0%, $gradient-end 100%) !important
+  background: -webkit-linear-gradient(-45deg,  $gradient-start 0%,$gradient-end 100%) !important
+  background: linear-gradient(135deg, $gradient-start 0%,$gradient-end 100%) !important
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradient-start', endColorstr='$gradient-end',GradientType=1 ) !important
+
+
+// 
+// Buttons
+// 
+.ui.button.wide
+  padding-right: 40px !important
+  padding-left: 40px !important
+
+
+
+// 
+// 
+// 
+
+.hide
+  display: none
+
+
+
+// 
+// 
+// 
